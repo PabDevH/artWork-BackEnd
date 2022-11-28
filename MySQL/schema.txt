@@ -1,0 +1,76 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 28, 2022 at 04:34 PM
+-- Server version: 5.5.53-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `artwork`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `additionalData`
+--
+
+CREATE TABLE IF NOT EXISTS `additionalData` (
+  `additionalDataId` int(10) NOT NULL AUTO_INCREMENT,
+  `authorName` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `place` varchar(255) DEFAULT NULL,
+  `year` int(10) DEFAULT NULL,
+  `collection` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `width` varchar(10) DEFAULT NULL,
+  `heigth` varchar(10) DEFAULT NULL,
+  `units` varchar(255) DEFAULT NULL,
+  `inscription` varchar(255) DEFAULT NULL,
+  `technique` varchar(255) DEFAULT NULL,
+  `conservation` varchar(255) DEFAULT NULL,
+  `additionalNotes` longtext,
+  `frontImage` varchar(255) DEFAULT NULL,
+  `reverseImage` varchar(255) DEFAULT NULL,
+  `inscriptionImage` varchar(255) DEFAULT NULL,
+  `signImage` varchar(255) DEFAULT NULL,
+  `tokenId` int(10) DEFAULT NULL,
+  `certificate1` varchar(255) DEFAULT NULL,
+  `certificate2` varchar(255) DEFAULT NULL,
+  `certificate3` varchar(255) DEFAULT NULL,
+  `certificate4` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`additionalDataId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artWorkCertificates`
+--
+
+CREATE TABLE IF NOT EXISTS `artWorkCertificates` (
+  `certificateId` int(10) NOT NULL AUTO_INCREMENT,
+  `additionalDataId` int(10) DEFAULT NULL,
+  `certificateUrl` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`certificateId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `userId` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
